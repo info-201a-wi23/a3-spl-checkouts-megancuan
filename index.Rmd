@@ -5,50 +5,52 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+The data set I chose was everything checked out that was part of the Geronimo Stilton series. Geronimo Stilton is a popular children's book series that I enjoyed dearly as a young child and was created by Italian author Elisabetta Dami. The series features a mouse named Geronimo Stilton, who is a journalist and author living in New Mouse City. 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("summary.R")}
+```
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
 
 ### The Dataset
 
 - Who collected/published the data?  
+
+The City of Seattle published data that was collected by the Seattle Public Library.
+
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
+
+I filtered the data to only include Geronimo Stilton books. The creator is listed as either "Geronimo, Stilton", "Stilton, Geronimo", "Thea, Stilton", or "Stilton, Thea." The data set includes data from April 2005 to January 2023. The data includes 33,054 rows and 12 columns. The 12 columns included are: UsageClass, CheckoutType, MaterialType, CheckoutYear, CheckoutMonth, Checkouts, Title	ISBN,	Creator	Subjects,	Publisher, and PublicationYear.
+
 - How was the data collected or generated?  
+
+The Seattle Public Library's checkout data, spanning from April 2005 to February 2023, was collected by counting the number of checkouts for physical and digital items each month. The data was obtained from a variety of current and historical sources.
+
+
 - Why was the data collected?  
+
+The data was collected to fulfill a range of objectives, which facilitating economic development and research, enhancing performance, and promoting transparency.
+
 - What, if any, ethical questions do you need to consider when working with this data?  
+
+Where in Seattle are public libraries located? Do the libraries in lower income areas have as much access to these books as those in higher income areas?
+
 - What are possible limitations or problems with this data?   (at least 200 words)
+
+One significant limitation is the lack of consistency between different book titles and authors.
+
+This inconsistency can result from various factors such as the use of different identifiers, misspellings, and variations in formatting. For instance, an author's name could be listed as "First, Last" in one entry and as "Last, First" in another entry, leading to potential inaccuracies in data analysis. These issues can make it difficult to track the circulation of specific books or authors accurately, thereby creating challenges in identifying trends or making comparisons.
+
+Additionally, variations in formatting, such as the use of abbreviations or different spellings, can also pose challenges in identifying specific books or authors accurately. Inconsistencies in data can also affect the quality and reliability of any conclusions or insights drawn from it. Analysts and researchers must be aware of these limitations and should apply appropriate measures to ensure the accuracy and reliability of their analysis.
+
+Despite this limitation, the dataset still provides plenty of information on the circulation patterns of books at the Seattle Public Library. By taking into account the potential sources of inconsistency, it is still possible to gain valuable insights into the reading habits and preferences of library users and to identify trends in the demand for different types of books.
 
 
 ### First Trends Over Time Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
 ```
+
 
 ### Second Trends Over Time Chart
 
