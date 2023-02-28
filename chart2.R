@@ -1,6 +1,6 @@
-x_values <- seq(1, 3)
-y_values <- seq(1,3)
+library("dplyr")
+library("stringr")
+library("ggplot2")
 
-library(ggplot2)
-ggplot() +
-  geom_line(aes(x=x_values, y = y_values))
+checkouts <- read.csv("~/Downloads/Checkouts_by_Title.csv", stringsAsFactors = FALSE)
+checkouts[checkouts == ""] <- NA
