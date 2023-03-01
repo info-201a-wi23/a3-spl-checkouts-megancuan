@@ -5,12 +5,18 @@ library(stringr)
 
 # In the SPL, what Geronimo Stilton book written has the highest number of checkouts?
 most_checked_out_book <- GS_data %>% 
-  filter(Checkouts == max(Checkouts)) %>% 
+  filter(MaterialType == "BOOK") %>% 
+  group_by(Title) %>%
+  summarize(sum = sum(Checkouts)) %>%
+  filter(sum == max(sum)) %>%
   pull(Title)
 
 # In the SPL, what Geronimo Stilton book written has the lowest number of checkouts?
 least_checked_out_book <- GS_data %>% 
-  filter(Checkouts == min(Checkouts)) %>% 
+  filter(MaterialType == "BOOK") %>% 
+  group_by(Title) %>%
+  summarize(sum = sum(Checkouts)) %>%
+  filter(sum == min(sum)) %>%
   pull(Title)
 
 # In the SPL, what month does Geronimo Stilton has the highest number of checkouts?

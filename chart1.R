@@ -6,22 +6,39 @@ library("tidyverse")
 
 
 GS_data <- read.csv("~/Downloads/Checkouts_by_Title.csv", stringsAsFactors = FALSE)
+GS_data <- GS_data %>%
+  filter(MaterialType == "BOOK")
+GS_data$Title <- gsub("/.*","", GS_data$Title)
 
-checkouts_per_year <- GS_data %>%
-  mutate(date = paste0(CheckoutYear, "-", CheckoutMonth, "-01")) %>%
-  mutate(date = as.Date(date, format = "%Y-%m-%d")) %>%
-  group_by(UsageClass, date) %>%
-  summarize(sum = sum(Checkouts))
 
-ggplot(data = checkouts_per_year) +
+most_checked_out_book <- GS_data %>% 
+  group_by(Title) %>%
+  summarize(sum = sum(Checkouts)) %>%
+  filter(sum == max(sum)) %>%
+  pull(Title)
+
+least_checked_out_book <- GS_data %>% 
+  group_by(Title) %>%
+  summarize(sum = sum(Checkouts)) %>%
+  filter(sum == min(sum)) %>%
+  pull(Title)
+
+pop <- GS_data %>% 
+  filter(Title %in% 
+           c(most_checked_out_book, least_checked_out_book)) %>% 
+  group_by(Title, CheckoutYear) %>%
+  summarize(GS_checkouts = sum(Checkouts))
+  
+
+ggplot(data = pop) +
   geom_line(mapping = aes(
-    x = date,
-    y = sum,
-    color = UsageClass
+    x = CheckoutYear,
+    y = GS_checkouts,
+    color = Title
   )) +
   labs(
-    title = "Number Geronimo Stilton Book Checkouts per Year by Usage Class",
-    x = "Year",
-    y = "Number of Checkouts",
-  )
-
+    title = "Comparing Trends of Checkouts for Most and Least Popular Geronimo Stilton Books",
+    x = "Date",
+    y = "Total Checkouts"
+  ) 
+  
