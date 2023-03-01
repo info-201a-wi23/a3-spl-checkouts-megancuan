@@ -1,4 +1,5 @@
 GS_data <- read.csv("~/Downloads/Checkouts_by_Title.csv", stringsAsFactors = FALSE)
+GS_data$Title <- gsub("/.*","", GS_data$Title)
 
 library(dplyr)
 library(stringr)

@@ -9,10 +9,10 @@ The data set I chose was everything checked out that was part of the Geronimo St
 
 ### Summary Information
 
-``````{r, echo = FALSE, warning = FALSE, message = FALSE, readLines("summary.R")}
+``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("summary.R")}
 ```
 
-I conducted an analysis and obtained five key values related to Geronimo Stilton books in the SPL. Firstly, I identified the Geronimo Stilton book with the highest number of checkouts in the SPL, which I stored as `r most_checked_out_book`. Secondly, I determined the Geronimo Stilton book with the lowest number of checkouts in the SPL and saved it as `r least_checked_out_book`. Thirdly, I calculated the month in which Geronimo Stilton had the highest number of checkouts in the SPL, which I recorded as `r month_most_checkouts`. Fourthly, I identified the month in which Geronimo Stilton had the lowest number of checkouts in the SPL and saved it as `r month_least_checkouts`. Lastly, I calculated the Geronimo Stilton book with the highest number of checkouts in the SPL in 2011, which I named `r most_checked_out_2011`.
+I conducted an analysis and obtained five key values related to Geronimo Stilton books in the SPL. Firstly, I identified the Geronimo Stilton book with the highest number of checkouts in the SPL, which was `r most_checked_out_book`. Secondly, I determined the Geronimo Stilton book with the lowest number of checkouts in the SPL and was `r least_checked_out_book`. Thirdly, I calculated the month in which Geronimo Stilton had the highest number of checkouts in the SPL, which I found it to be `r month_most_checkouts`. Fourthly, I identified the month in which Geronimo Stilton had the lowest number of checkouts in the SPL and discovered it was `r month_least_checkouts`. Lastly, I calculated the Geronimo Stilton book with the highest number of checkouts in the SPL in 2011, which I named `r most_checked_out_2011`.
 
 ### The Dataset
 
