@@ -12,6 +12,7 @@ The data set I chose was everything checked out that was part of the Geronimo St
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, readLines("summary.R")}
 ```
 
+I conducted an analysis and obtained five key values related to Geronimo Stilton books in the SPL. Firstly, I identified the Geronimo Stilton book with the highest number of checkouts in the SPL, which I stored as 'r most_checked_out_book'. Secondly, I determined the Geronimo Stilton book with the lowest number of checkouts in the SPL and saved it as 'r least_checked_out_book'. Thirdly, I calculated the month in which Geronimo Stilton had the highest number of checkouts in the SPL, which I recorded as 'r month_most_checkouts'. Fourthly, I identified the month in which Geronimo Stilton had the lowest number of checkouts in the SPL and saved it as 'r month_least_checkouts'. Lastly, I calculated the Geronimo Stilton book with the highest number of checkouts in the SPL in 2011, which I named 'r most_checked_out_2011'.
 
 ### The Dataset
 
@@ -51,22 +52,17 @@ Despite this limitation, the dataset still provides plenty of information on the
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart1.R")}
 ```
 
+In chart 1, I compared the trends of checkout trends over time for the most popular book with the checkout trends of the least popular book from the Geronimo Stilton series. It was designed to show the stark difference between the two. The least popular book, an Italian version of the book, "Ma che vacanza ... a Rocca Taccagna!" is just a tiny line on the bottom because it was only checked out 2 times in the entire data set. The most popular book, on the other hand, was consistently being checked out till 2020 when the pandemic hit. 
 
-### Second Trends Over Time Chart\
+### Second Trends Over Time Chart
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart2.R")}
 ```
 
-### Your Choice
+The second chart shows the trends between the material types over time for the Geronimo Stilton series books. It was designed to show trends in people's preferences in material. From the chart we can se as the physical copy declined, the eBook checkouts increased. However, we can see both decreasing in the last couple years. The rest of the materials have checked out at a pretty steady rate. 
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
+### Chart of Most Popular Books
 
 ``````{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("chart3.R")}
 ```
 
-
+This scatter plot displays the number of checkouts for the most popular books between 2013 and 2017. The objective was to examine if there were any variations in the checkouts for the most popular books during the time when the series experienced a significant increase in circulation. However, based on the scatter plot, we cannot observe any substantial differences in the number of checkouts for the most popular book.

@@ -38,3 +38,4 @@ most_checked_out_2011 <- GS_data %>%
   group_by(CheckoutYear == "2011") %>% 
   filter(Checkouts == max(Checkouts)) %>% 
   pull(Title)
+

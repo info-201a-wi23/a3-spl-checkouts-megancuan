@@ -39,6 +39,7 @@ ggplot(data = pop) +
   labs(
     title = "Comparing Trends of Checkouts for Most and Least Popular Geronimo Stilton Books",
     x = "Date",
-    y = "Total Checkouts"
+    y = "Total Checkouts",
+    color = "Book Title"
   ) 
   

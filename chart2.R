@@ -16,5 +16,7 @@ ggplot(data = GS_material) +
   ) +
   labs(title = "Checkouts over Time by Material", 
        x = "Date", 
-       y = "Checkouts") +
+       y = "Checkouts",
+       color = "Material Type"
+       )+
   scale_color_brewer(palette = "Set1")
